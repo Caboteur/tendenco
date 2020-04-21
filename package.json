@@ -19,13 +19,12 @@
     "wikijs": "^6.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "node-env-run server --exec nodemon | pino-colada",
-    "dev": "run-p server start",
-    "heroku-postbuild":"npm run dev"
+    "dev": "run-p server start"
 
   },
   "proxy": "http://localhost:3001/",
