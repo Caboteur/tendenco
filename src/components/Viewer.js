@@ -13,35 +13,35 @@ class Viewer extends Component {
     return (
       <div id={this.props.id} className={styles.articles} style={{display:this.props.display}}>
         <div className={styles.headerContainer}>
-       <img className={styles.exitButton} src={exit} onClick={this.props.click}/>
+       <img alt="exitButton" className={styles.exitButton} src={exit} onClick={this.props.click}/>
         <h1 className={styles.title}>{this.props.topics}</h1>
         </div>
      <div>
        <a href={this.props.wikiurl}>
-       <img className={styles.icon} src={wikipedia} />
-       <h2 className={styles.article}></h2>
+       <img alt="wikipedia" className={styles.icon} src={wikipedia} />
+
        </a>
      </div>
      <div>
        <a href={this.props.googleSearch}>
-       <img className={styles.icon} src={google} />
-       <h2 className={styles.article}></h2>
+       <img alt="google" className={styles.icon} src={google} />
+
        </a>
      </div>
      <div>
        <a href={this.props.twitterSearch}>
-       <img className={styles.icon} src={twitter} />
-       <h2 className={styles.article}></h2>
+       <img alt="twitter" className={styles.icon} src={twitter} />
+
        </a>
      </div>
      <div><a href={this.props.youtubeSearch}>
-       <img className={styles.icon} src={youtube} />
-       <h2 className={styles.article}></h2>
+       <img alt="youtube" className={styles.icon} src={youtube} />
+    >
        </a>
      </div>
      <div>
        <a href={this.props.url}>
-       <img className={styles.icon} src={news} />
+       <img alt="news" className={styles.icon} src={news} />
        {this.props.url?   <div><h2 className={styles.article}> {this.props.title}</h2>
      <p>{this.props.url.source} </p> </div> : <h2></h2> }
        </a>

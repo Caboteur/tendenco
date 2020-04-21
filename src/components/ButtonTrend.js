@@ -11,7 +11,7 @@ class ButtonTrend extends Component {
 }
 
         componentDidMount(){
-          let top = ""
+
           googleTranslate.translate(this.props.title, 'fr', function(err, translation) {
 
 
@@ -28,7 +28,7 @@ class ButtonTrend extends Component {
 
 
       <div id={this.props.id} style={{display:this.props.display}} name={this.props.value} onClick={this.props.click} className={styles.Button}>
-        {this.props.trad == true? this.state.title : this.props.value}
+        {this.props.trad === true? this.state.title : this.props.value}
       </div>
 
     );

@@ -3,9 +3,11 @@ const bodyParser = require('body-parser');
 const pino = require('express-pino-logger')();
 const googleTrends = require('google-trends-api');
 const fetch = require('node-fetch');
+const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 3001;
+app.use(express.static(path.join(__dirname, 'build')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(pino);
 

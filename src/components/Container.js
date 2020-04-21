@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import ButtonTrend from './ButtonTrend.js'
 import styles from './Container.module.css';
-import Datas from './Api/Api-request.js'
 import Viewer from './Viewer.js'
 import wiki from 'wikijs'
 import countries from './Api/countries.js'
-import { googleTranslate } from "./Api/googleTranslate.js";
 import Preloader from './Preloader.js'
 
 class Container extends Component {
@@ -90,7 +88,6 @@ class Container extends Component {
 
    wiki(data){
      {
-
        const wikiSearchReturnValues = []
 
          var url = "https://fr.wikipedia.org/w/api.php";
@@ -125,7 +122,7 @@ class Container extends Component {
            .then(
              (response)=> {
 
-                if (wikiSearchReturnValues[0] != undefined){
+                if (wikiSearchReturnValues[0] !== undefined){
                  let title = wikiSearchReturnValues[0].queryResultPageTitle;
 
                   this.setState({wiki:title}, ()=>console.log(title));
