@@ -5,7 +5,6 @@ import Datas from './Api/Api-request.js'
 import Viewer from './Viewer.js'
 import wiki from 'wikijs'
 import countries from './Api/countries.js'
-import ApiWikipedia from './Api/Api-wikipedia.js'
 import { googleTranslate } from "./Api/googleTranslate.js";
 import Preloader from './Preloader.js'
 
