@@ -5,7 +5,7 @@ const googleTrends = require('google-trends-api');
 const fetch = require('node-fetch');
 
 const app = express();
-
+const port = process.env.PORT || 3001;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(pino);
 
@@ -71,6 +71,6 @@ ApiCall();
 
 
 
-app.listen(3001, () =>
+app.listen(port, () =>
 console.log('Express server is running on localhost:3001')
 );
