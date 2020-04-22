@@ -6,14 +6,14 @@ const fetch = require('node-fetch');
 const path = require('path');
 const cors = require ('cors');
 const corsOptions = {
-  origin: 'https://tedenco-topics.herokuapp.com/', 
+  origin: 'https://tedenco-topics.herokuapp.com/',
   optionsSuccessStatus: 200
 }
-app.use (cors (corsOptions));
-app.options ('*', cors ());
-app.use ('/', routes);
+
+
 
 const app = express();
+app.use (cors (corsOptions));
 const port = process.env.PORT || 3001;
 app.use(express.static(path.join(__dirname, 'public')));
 
