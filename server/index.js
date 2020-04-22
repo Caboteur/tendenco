@@ -4,6 +4,14 @@ const pino = require('express-pino-logger')();
 const googleTrends = require('google-trends-api');
 const fetch = require('node-fetch');
 const path = require('path');
+const cors = require ('cors');
+const corsOptions = {
+  origin: 'https://tedenco-topics.herokuapp.com/', 
+  optionsSuccessStatus: 200
+}
+app.use (cors (corsOptions));
+app.options ('*', cors ());
+app.use ('/', routes);
 
 const app = express();
 const port = process.env.PORT || 3001;
