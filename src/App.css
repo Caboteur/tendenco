@@ -41,13 +41,12 @@ text-align: center;
 margin: auto;
 display: block;
 max-width: 511px;
-/* border-radius: 50% !important; */
 overflow: hidden;
 margin: 0 auto;
 border: none;
     padding: 21px 26px;
     border-radius: 9px;
-    color: #6D7587;
+    color: #1c0c4e;
     background-color: var(--back-color);
     /* box-shadow: 3px 4px 6px 1px rgba(0, 0, 0, 0.3), -2px -2px 4px 2px rgba(255, 255, 255, 1), inset -14px -14px 20px -10px rgba(0, 0, 0, 0.1), inset 14px 14px 20px -10px rgba(255, 255, 255, 0.5) !important; */
     box-shadow: 7px 7px 15px rgba(55, 84, 170, .15), -7px -7px 20px rgba(255, 255, 255, 1), inset 0px 0px 4px rgba(255, 255, 255, .2), inset 7px 7px 15px rgba(55, 84, 170, 0), inset -7px -7px 20px rgba(255, 255, 255, 0), 0px 0px 4px rgba(255, 255, 255, 0) !important;

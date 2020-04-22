@@ -5,6 +5,7 @@ import Viewer from './Viewer.js'
 import wiki from 'wikijs'
 import countries from './Api/countries.js'
 import Preloader from './Preloader.js'
+import cjson from 'compressed-json';
 
 class Container extends Component {
   constructor(props) {
@@ -34,7 +35,9 @@ class Container extends Component {
 
   async News(){
     this.setState({ reponse: [] })
+
     const response= await fetch('/news-trend-'+this.state.value);
+    console.log(response)
     const body = await response.json();
 
    body.map((tab)=>{

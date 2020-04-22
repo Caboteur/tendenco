@@ -5,11 +5,13 @@ const googleTrends = require('google-trends-api');
 const fetch = require('node-fetch');
 const path = require('path');
 const cors = require ('cors');
+const compression = require('compression')
 
 
 
 const app = express();
 app.use(cors())
+app.use(compression())
 const port = process.env.PORT || 3001;
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -47,9 +49,8 @@ function googleCall(coutry) {
         const trendy = {country:lg,topic:topic}
         let civ = 'tab' + lg;
 
-
           tab.push(trendy);
-          app.get('/news-trend-'+lg, (req, res) => res.send(tab))
+          app.get('/news-trend-'+lg, (req, res) => res.send(compressed))
 
 
       });
