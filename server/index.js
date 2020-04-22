@@ -11,7 +11,6 @@ const compression = require('compression')
 
 const app = express();
 app.use(cors())
-app.use(compression())
 const port = process.env.PORT || 3001;
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -50,7 +49,7 @@ function googleCall(coutry) {
         let civ = 'tab' + lg;
 
           tab.push(trendy);
-          app.get('/news-trend-'+lg, (req, res) => res.send(trendy))
+          app.get('/news-trend-'+lg, (req, res) => res.send(tab))
 
 
       });
