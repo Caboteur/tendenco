@@ -11,6 +11,7 @@ const compression = require('compression')
 
 const app = express();
 app.use(cors())
+app.use(compression())
 const port = process.env.PORT || 3001;
 app.use(express.static(path.join(__dirname, 'public')));
 
