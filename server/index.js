@@ -21,7 +21,8 @@ console.log("ok")
 var countries =  ["ID","HU","HK","GR","FI","EG","DK","KR","CO","CA","CL","BR","AU","AT","AR","SA","ZA","FR","US","DE","GB","IT","BE","IN","IE","IL","JP","KE","MY","MX","NG","NO","NZ","NL","PH","PL","PT","RO","RU","SG","SE","CH","TW","CZ","TH","TR","UA","VN"]
 let nation ="";
 var length = -1;
-var tab =[]
+var tab =[];
+var tabFirst = [];
 
 function googleCall(coutry) {
 
@@ -47,11 +48,14 @@ function googleCall(coutry) {
 
         var topic = num;
         const trendy = {country:lg,topic:topic}
-        let civ = 'tab' + lg;
 
+        if (lg === "FR"){
+          tabFirst.push(trendy);
+          app.get('/first-trend',(req, res) => res.send(tabFirst))
+        }else{
           tab.push(trendy);
           app.get('/news-trend-'+lg, (req, res) => res.send(tab))
-
+        }
 
       });
 

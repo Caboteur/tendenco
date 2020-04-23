@@ -27,20 +27,29 @@ class Container extends Component {
     }
   }
 
-  componentDidMount(){
-    console.log(countries())
-    this.News();
+
+componentDidMount(){
+    this.fastResponse();
+    this.Server();
+}
+ async fastResponse(){
+    const response= await fetch('http://localhost:3001/first-trend');
+    const body = await response.json();
+      this.setState({ data: body})
+      this.News();
   }
-
-
-  async News(){
-    this.setState({ reponse: [] })
-
+  async Server(){
     const response= await fetch('/news-trend-'+this.state.value);
-
     const body = await response.json();
 
-   body.map((tab)=>{
+    this.setState({ data: body })
+  }
+  async News(){
+     console.log(this.state.data)
+await  this.setState({ loading:"inherit" })
+await this.setState({ reponse: [] })
+
+   await this.state.data.map((tab)=>{
 
       if (tab.country  === this.state.value){
         this.setState({ loading:"none" }, console.log(this.state.loading))
