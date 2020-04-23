@@ -39,7 +39,7 @@ componentDidMount(){
       this.News();
   }
   async Server(){
-    const response= await fetch('http://localhost:3001/news-trend');
+    const response= await fetch('/news-trend');
     const body = await response.json();
 
     this.setState({ data: body })

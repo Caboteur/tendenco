@@ -36,27 +36,21 @@ function googleCall(coutry) {
     if (err) {
       console.log(err);
     }else{
-
       const ok = JSON.parse(results);
-
       const res = ok.default.trendingSearchesDays[0].trendingSearches;
       const str = ok.default.rssFeedPageUrl;
       const strL = str.length
       const lg = str[64] + str[65];
       var glob = ok.default;
       res.map(function(num) {
-
         var topic = num;
         const trendy = {country:lg,topic:topic}
-
         if (lg === "FR"){
           tabFirst.push(trendy);
           app.get('/first-trend',(req, res) => res.send(tabFirst))
-        }else{
+        }
           tab.push(trendy);
           app.get('/news-trend', (req, res) => res.send(tab))
-        }
-
       });
 
 
