@@ -54,7 +54,7 @@ function googleCall(coutry) {
           app.get('/first-trend',(req, res) => res.send(tabFirst))
         }else{
           tab.push(trendy);
-          app.get('/news-trend-'+lg, (req, res) => res.send(tab))
+          app.get('/news-trend', (req, res) => res.send(tab))
         }
 
       });
