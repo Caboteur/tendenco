@@ -6,7 +6,7 @@ const fetch = require('node-fetch');
 const path = require('path');
 const cors = require ('cors');
 const compression = require('compression')
-
+const wakeUpDyno = require("./wakeDyno.js"); // my module!
 
 
 const app = express();
@@ -23,6 +23,7 @@ let nation ="";
 var length = -1;
 var tab =[];
 var tabFirst = [];
+const DYNO_URL = "https://tedenco-topics.herokuapp.com/";
 
 function googleCall(coutry) {
 
@@ -77,6 +78,6 @@ ApiCall();
 
 
 
-app.listen(port, () =>
-console.log('Express server is running on localhost:3001')
-);
+app.listen(port, () => {
+    wakeUpDyno(DYNO_URL); // will start once server starts
+})

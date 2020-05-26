@@ -18,29 +18,34 @@ class Viewer extends Component {
         </div>
      <div>
        <a href={this.props.wikiurl}>
+         Une page associée sur wikipédia
        <img alt="wikipedia" className={styles.icon} src={wikipedia} />
 
        </a>
      </div>
      <div>
        <a href={this.props.googleSearch}>
+          Recherchez ce therme sur google
        <img alt="google" className={styles.icon} src={google} />
 
        </a>
      </div>
      <div>
        <a href={this.props.twitterSearch}>
+           Recherchez ce therme sur twitter
        <img alt="twitter" className={styles.icon} src={twitter} />
 
        </a>
      </div>
      <div><a href={this.props.youtubeSearch}>
+        Recherchez ce therme sur youtube
        <img alt="youtube" className={styles.icon} src={youtube} />
     >
        </a>
      </div>
      <div>
        <a href={this.props.url}>
+         Un article associé 
        <img alt="news" className={styles.icon} src={news} />
        {this.props.url?   <div><h2 className={styles.article}> {this.props.title}</h2>
      <p>{this.props.url.source} </p> </div> : <h2></h2> }
